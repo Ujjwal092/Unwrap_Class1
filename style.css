@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* include padding and border so that content can be small but box size remain const */
+}
+#wrapper {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  /* background-color: #f4f4f4; */
+  overflow-x: hidden;
+  /* disable horizontal scrolling */
+  overflow-y: auto;
+}
+.container {
+  height: 100%;
+  max-width: 1200px;
+  /* set a max width for the container */
+  margin: 0 auto;
+  /* center the container */
+  padding: 20px;
+  /* BORDER AND  content spacing */
+}
+h1 {
+  margin: 20px 0;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 3rem;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* allow items to wrap to the next line */
+  gap: 20px;
+  /* justify-content: space-between; */
+}
+.cards {
+  width: 32%;
+  /* three cards per row with some gap */
+  position: relative;
+  /* for positioning caption if needed */
+  object-fit: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  /* to clip overflowed content like image req more area and card req less */
+}
+.cards img {
+  width: 100%; /* make image take full width of card with res to parent */
+  filter: grayscale(100%);
+  box-shadow: 0 0 20px #333;
+  height: 100%;
+  /* make image take full height of card with res to parent and border will inherit */
+
+  /* transition: smooth 0.3s; */
+}
+.cards:hover {
+  transform: scale(1.05);
+  /* slightly enlarge the card on hover default value is 1 */
+  transition: 0.3s;
+  filter: drop-shadow(0 0 10px #333);
+  /* add shadow on hover */
+}
+.cards:hover img {
+  filter: grayscale(0%);
+  /* remove grayscale on hover */
+}
+.cards figcaption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(255, 255, 255, 0) 100% /* black to transparent */
+  );
+  opacity: 0;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  transition: 0.3s;
+}
+.cards:hover figcaption {
+  opacity: 1;
+}
