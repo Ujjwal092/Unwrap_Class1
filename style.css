@@ -1,3 +1,4 @@
+/* using flexbox for gallery layout */
 * {
   margin: 0;
   padding: 0;
@@ -86,3 +87,86 @@ h1 {
 .cards:hover figcaption {
   opacity: 1;
 }
+/* using grid for gallery layout */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.container {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin: 20px 0;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 3rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* three equal columns 
+  
+  gap: 20px;
+}
+
+.cards {
+  position: relative;
+  object-fit: cover;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Rest of the CSS remains the same 
+.cards img {
+  width: 100%;
+  filter: grayscale(100%);
+  box-shadow: 0 0 20px #333;
+  height: 100%;
+}
+
+.cards:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+  filter: drop-shadow(0 0 10px #333);
+}
+
+.cards:hover img {
+  filter: grayscale(0%);
+}
+
+.cards figcaption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.cards:hover figcaption {
+  opacity: 1;
+} 
